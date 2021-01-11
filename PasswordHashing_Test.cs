@@ -27,11 +27,19 @@ namespace lab2
         [Theory]
         [InlineData(null)]
         [InlineData("")]
+        public void Test_GetHashFromEmptySalt(string salt)
+        {
+            Assert.NotNull(PasswordHasher.GetHash(password, salt));
+        }
+
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
         public void Test_GetHashFromEmptyPassword(string password)
         {
             Assert.NotNull(PasswordHasher.GetHash(password));
         }
-
+        
         [Fact]
         public void Test_PasswordSpesialSymbolsTest()
         {
