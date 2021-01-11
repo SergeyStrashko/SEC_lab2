@@ -85,13 +85,12 @@ namespace lab2
         }
 
         [Theory]
-        [InlineData(-1)]
         [InlineData(0)]
         [InlineData(1)]
         [InlineData(4294967296)]
-        public void Test__adlerMod32BoundaryValue(long value)
+        public void Test__adlerMod32BoundaryValue(uint value)
         {
-            Assert.NotNull(PasswordHasher.GetHash(password, salt, (uint)value));
+            Assert.NotNull(PasswordHasher.GetHash(password, salt, value));
         }
 
         [Fact]
