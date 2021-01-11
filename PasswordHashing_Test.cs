@@ -94,7 +94,9 @@ namespace lab2
 
         [Theory]
         [InlineData(0)]
-        [InlineData(1)]
+        [InlineData(2048)]
+        [InlineData(65535)]
+        [InlineData(131070)]
         [InlineData(4294967296)]
         public void Test__adlerMod32BoundaryValue(uint value)
         {
